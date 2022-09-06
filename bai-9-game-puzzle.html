@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="anh1" src="image/Cat1.jpg" onclick="move()" style="width: 800px; height: 160px">
+<img id="anh2" src="image/Gau2.jpg" alt="" onclick="move2()" style="width: 800px; height: 160px">
+<img id="anh3" src="image/Khi3.jpg" alt="" onclick="move3()" style="width: 800px; height: 160px">
+
+<script>
+    let count1=0;
+    let count2=1;
+    let count3=2;
+
+    let img1= document.getElementById('anh1');
+    function move(){
+        count1++;
+        if (count1==1){
+            img1.src='image/Gau1.jpg'
+        } else if(count1==2){
+            img1.src='image/Khi1.jpg'
+        } else {
+            count1=0
+            img1.src='image/Cat1.jpg'
+        }
+        checkShadow();
+    }
+
+
+    let img2= document.getElementById('anh2');
+    function move2(){
+        count2++;
+        if (count2==1){
+            img2.src='image/Gau2.jpg'
+        } else if(count2==2){
+            img2.src='image/Khi2.jpg'
+        } else {
+            count2=0
+            img2.src='image/Cat2.jpg'
+        }
+        checkShadow();
+    }
+
+
+    let img3= document.getElementById('anh3');
+    function move3(){
+        count3++;
+        if (count3==1){
+            img3.src='image/Gau3.jpg'
+        } else if(count3==2){
+            img3.src='image/Khi3.jpg'
+        } else {
+            count3=0
+            img3.src='image/Cat3.jpg'
+        }
+        checkShadow();
+    }
+
+    function checkShadow() {
+        if (count1==count2 && count2==count3){
+            img1.style.boxShadow='green 5px 5px 5px'
+            img2.style.boxShadow='green 5px 5px 5px'
+            img3.style.boxShadow='green 5px 5px 5px'
+        } else {
+            img1.style.boxShadow='red 5px 5px 5px'
+            img2.style.boxShadow='red 5px 5px 5px'
+            img3.style.boxShadow='red 5px 5px 5px'
+        }
+    }
+</script>
+
+</body>
+</html>
